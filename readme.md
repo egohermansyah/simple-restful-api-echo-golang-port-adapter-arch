@@ -7,7 +7,7 @@
 1. Create manually migration code in repository.
 
 ## Seeder
-1. Seeder data used for init data staging and production which has not feature insert and delete, if need seeder in test, don't add in seeder, create manually in your test code using faker.
+1. Seeder data used for init data staging and production which has don't have feature insert and delete, if need seeder in test, don't add in seeder, create manually in your test code using faker.
 2. Don't add credential or sensitive value in seeder. If not null field, add with empty value example : "".
 
 ## Linter
