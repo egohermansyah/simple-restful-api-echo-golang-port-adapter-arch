@@ -1,0 +1,35 @@
+version: "3.1"
+
+services:
+    mariadb:
+        container_name: mariadb_golang_vscode_setup
+        image: mariadb:10.6.4
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=golangvscodesetup
+            - MYSQL_USER=username
+            - MYSQL_PASSWORD=password
+        ports:
+            - 3307:3306
+        volumes:
+            - ./docker_data/mariadb:/var/lib/mysql
+    mongo:
+        container_name: mongo_golang_vscode_setup
+        image: mongo:5.0.3
+        environment:
+            - MONGO_DATA_DIR=/data/db
+            - MONGO_LOG_DIR=/dev/null
+        volumes:
+            - ./docker_data/mongo_db:/data/db
+        ports:
+            - 27019:27017
+        command: mongod
+    # redis:
+    #     container_name: redis_golang_vscode_setup
+    #     image: redis:6.2.5
+    #     command: ["redis-server", "--appendonly", "yes"]
+    #     hostname: redis
+    #     ports:
+    #         - 6380:6379
+    #     volumes:
+    #         - ./docker_data/redis:/data
