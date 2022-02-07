@@ -1,4 +1,4 @@
-module golang-vscode-setup
+module go-hexa-arch
 
 go 1.17
 
